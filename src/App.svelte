@@ -51,7 +51,7 @@
 
 <main>
   <h1 class="title">Todo List</h1>
-  <p>
+  <p class="header">
     <input class="input" type="text" bind:this={input} bind:value />
     <button class="button" on:click={onAdd}>添加</button>
   </p>
@@ -79,8 +79,14 @@
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
+    max-width: 480px;
     margin: 0 auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .title {
@@ -104,10 +110,13 @@
     background-color: #ff3e00;
     color: #fff;
     font-size: 14px;
+    margin-left: 12px;
   }
 
   .list {
     list-style: none;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .item {
@@ -131,7 +140,7 @@
   }
 
   @media (min-width: 640px) {
-    main {
+    main .list {
       max-width: none;
     }
   }
